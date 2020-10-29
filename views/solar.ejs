@@ -1,0 +1,21 @@
+
+<%- include('partials/header'); %>
+
+  <main id="main1">
+
+    <div class="cards">
+      <%  for (var i = 0; i < solar.length; i++) { %>
+        <div class="card card1">
+            <div class="container1">
+                <img src=<%= solar[i].image %> alt="las vegas">
+            </div>
+            <div class="details">
+                <h3><%= solar[i].title %></h3>
+                <p><%= solar[i].descp %></p>
+            </div>
+
+          </div>
+          <% } %>
+  </main>
+
+  <%- include('partials/footer'); %>
