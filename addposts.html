@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>ELECTRO</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Post details</h1>
+        
+      </div>
+    <div class="panel-body container" >
+    <form class="form-horizontal" action="/addpost" method="post" role="form" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="icode" class="col-md-3 control-label">Title</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="title">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="icode" class="col-md-3 control-label">Description</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="descp">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="icode" class="col-md-3 control-label">Image</label>
+            <div class="col-md-9">
+                <input type="file" class="form-control" name="file" accept="image/*">
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+</body>
+</html>

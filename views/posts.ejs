@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Posts</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+		.card {
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+		width: 60%;
+		}
+
+		.card:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+
+		.container {
+		padding: 2px 16px;
+		}
+      @media only screen and (max-width: 600px) {
+  .card {
+    
+      width:100%;
+  }
+}
+	</style>
+    
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center">
+        <div class="logo mr-auto">
+          <h1 class="text-light"><span>POSTS</span></h1>
+          
+        </div>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li class="get-started"><a href="/addpost">Add post</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+      </div><!-- End Header Container -->
+    </div>
+  </header>
+  <!-- End Header -->
+	<section id="posts" class="posts" style="margin-top:5%;">
+		<div class="container">
+			<% for(var i=0;i<posts.length;i++){ %>
+
+			<div class="card" style="margin-top:1%;margin-left:auto;margin-right:auto;">
+				<h6 style ="text-align: center; "> <%= posts[i].name %></h6>
+				<img src=  "/assets/uploads/<%= posts[i].image %>"  alt="Avatar" style="width:100% height:500px">
+				<div class="container">
+					<input type="image" id="1" src="assets/img/disheart.png" alt="Submit" width="5%" height="5%" onclick="like(this.id)">
+					<h4><b> <%=posts[i].title %></b></h4> 
+					<p> <%= posts[i].descp %> </p> 
+				</div>
+			</div>
+
+			<% } %>
+			
+		</div>
+	</section>
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ELECTRO</h3>
+            <p>
+              Indian Institute of Technology Tirupati<br>
+              
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Get weekly updates and information about renewable energy</p>
+            <form action="/" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ELECTRO</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by Team6
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function like(x){
+      if(document.getElementById(x).src.indexOf("disheart")==-1){
+        document.getElementById(x).src="assets/img/disheart.png";
+      }
+      else{
+        document.getElementById(x).src="assets/img/heart.png";
+      }
+    }
+  
+    </script>
+  
+</body>
+
+</html>
