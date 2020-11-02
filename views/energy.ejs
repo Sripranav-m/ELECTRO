@@ -1,0 +1,22 @@
+
+<%- include('partials/header'); %>
+
+  <main id="main1">
+
+    <div class="cards">
+      <%  for (var i = 0; i < energylist.length; i++) { %>
+        <div class="card card1">
+            <div class="container1">
+                <img src= "/assets/img/projects/<%= energylist[i].image %>" alt="las vegas">
+            </div>
+            <div class="details">
+                <h3><%= energylist[i].title %></h3>
+                <p><%= energylist[i].descp %></p>
+                <a target="_blank" href=<%= energylist[i].link %>> Read more </a>
+            </div>
+
+          </div>
+          <% } %>
+  </main>
+
+  <%- include('partials/footer'); %>

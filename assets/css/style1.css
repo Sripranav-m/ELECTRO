@@ -20,15 +20,15 @@
 .cards{
     background-color: #eeebeb;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    padding: 50px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    padding: 20px;
     grid-gap:50px;
 }
 .card{
 
     background-color: #242427;
     border-radius: 20px;
-    box-shadow: 0 0 100px rgba(0,0,0,0.18);
+    box-shadow: 0 0 30px rgba(0,0,0,0.18);
 }
 .card:hover{
     transform: scale(1.025);
@@ -41,6 +41,7 @@
 }
 img{
     width: 100%;
+    height: 300px;
     display: block;
     border-radius: 20px 20px 0 0;
 }
@@ -54,48 +55,7 @@ img{
     border-radius: 18px 18px 0 0;
     opacity: 0.7;
 }
-.card1>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #0100ec,
-        #fb36f4
-    );
-}
-.card2>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #2bdce3,
-        #42ffdb
-    );
-}
-.card3>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #ffab1d,
-        #f8501c
-    );
-}
-.card4>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #0100ec,
-        #fb36f4
-    );
-}
-.card5>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #2bdce3,
-        #42ffdb
-    );
-}
-.card6>.container1:after{
-    background-image: linear-gradient(
-        135deg,
-        #ffab1d,
-        #f8501c
-    );
-}
+
 .details{
     padding: 20px 10px;
 }
