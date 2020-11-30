@@ -7,11 +7,11 @@ body {
 .choice-container {
   display: flex;
   margin-bottom: 0.8rem;
-  width: 100%;
+  margin-top: 0.5rem;
   border-radius: 4px;
   background: rgb(18, 93, 255);
   font-size: 3rem;
-  max-width: 80rem;
+  max-width: 70rem;
 }
 
 .choice-container:hover {
@@ -78,6 +78,6 @@ body {
 
 @media screen and (max-width: 768px) {
   .choice-container {
-    min-width: 40rem;
+    min-width: 20rem;
   }
 }
