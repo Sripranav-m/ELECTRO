@@ -1,0 +1,61 @@
+* {box-sizing: border-box;
+}
+body {
+  background-color: #ddeff3;
+}
+
+#regForm {
+  background-color: #ffffff;
+  font-family: 'Roboto Slab', serif;
+  width: 100%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+label{
+  font-family: 'Roboto Slab', serif;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Karla', sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.tab {
+  display: none;
+}
+
+button {
+    border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+}
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+.step.finish {
+  background-color: #463be1;
+}
