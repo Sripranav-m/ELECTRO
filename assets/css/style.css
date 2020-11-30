@@ -1451,7 +1451,7 @@ input[type=text], input[type=password],input[type=email] {
 }
 
 /* Set a style for all buttons */
-button {
+.button2 {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -1494,7 +1494,7 @@ span.psw {
 }
 
 /* The Modal (background) */
-.modal {
+.modal1 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -1509,7 +1509,7 @@ span.psw {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modal-content1 {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
@@ -1560,16 +1560,16 @@ span.psw {
 }
 
 @media only screen and (max-width:900px){
-  .modal-content{
+  .modal-content1{
     width:100%;
   }
 }
 .modal-backdrop {
   z-index: 100001 !important;
 }
-.modal {
+.modal1 {
   z-index: 100001 !important;
 }
-.modal-content {
+.modal-content1 {
   z-index: 100001 !important;
 }
