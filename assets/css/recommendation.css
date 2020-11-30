@@ -1,0 +1,90 @@
+* {
+  
+  box-sizing: border-box;
+}
+
+#regForm {
+  background-color: #ffffff;
+  font-family: 'Roboto Slab', serif;
+  width: 100%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+label{
+  font-family: 'Roboto Slab', serif;
+}
+
+.input1 {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Karla', sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+#prevBtn,#nextBtn {
+  border: none;
+padding: 10px 20px;
+font-size: 17px;
+font-family: 'Roboto Slab', serif;
+cursor: pointer;
+}
+
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #463be1;
+}
+
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+
+@media only screen and (max-width:900px){
+  .modal-content2{
+    width:100%;
+  }
+}
+.modal-backdrop {
+  z-index: 100001 !important;
+}
+.modal2 {
+  z-index: 100003 !important;
+}
+.modal-content2 {
+  z-index: 100003 !important;
+}

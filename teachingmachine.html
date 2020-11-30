@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>findout</title>
+
+    <style>
+        .card {
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 60%;
+        }
+
+        .card:hover {
+
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .card {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/teachingmachine.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-image: url('assets/img/background1.jpg'); background-repeat: no-repeat; ">
+<!-- <body> -->
+    <!-- <section id="posts" class="posts" style="margin-top:2%;"> -->
+    <div class="container">
+        <div class="card" id="cardy"
+            style=" border-radius: 20px; margin-top:5%;margin-left:auto;margin-right:auto; border:none;">
+            <div
+                style=" width:100%; border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                <h6 style=" text-align: center; font-size: xx-large; padding: 2%;"> Want To know Renewable or not </h6>
+                <h6 style=" text-align: center; font-size: 20px; padding: 2%;"> Try showing some images through webcam after starting... </h6>
+                <h6 style=" text-align: center; font-size: 20px; padding: 2%;"> Eg: Solar panels, coal, plastic bottles </h6>
+            </div>
+
+            <!-- <div style = "background-color: #F0F0F0;border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"> -->
+            <div id="webcam-container" style=" margin:auto; padding: 2%;"> </div>
+                <p
+                    style=" padding: 1% 1% 1% 2%; font-size:large;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                    Renewable Energy </p>
+                <div class="progress" id="progress-renewable" style="display: none; width: 50%; height:20px; margin: auto;">
+                    <div class="progress-bar bg-warning" id="renewable" style="width:0% ; "></div>
+                </div>
+                <p
+                    style=" padding: 1% 1% 1% 2%; font-size:large; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ; margin-top: 3%;">
+                    Non-Renewable Energy </p>
+                <div class="progress" id="progress-nonrenewable" style="display: none ;width: 50%; height:20px; margin: auto;">
+                    <div class="progress-bar bg-danger" id="nonrenewable" style="width:0%"></div>
+                </div>
+                <div id="label-container"></div>
+                <div class="text-center" style=" padding: 1%;">
+                    <button type="button" class="btn btn-primary" style="margin-top: 5%;" onclick="init()">Start</button>
+                </div>
+                <div class="text-center" style=" padding-bottom:2%;">
+                    <a href="/"><button type="button" style="margin-top: 3%;" class="btn btn-primary">Home</button> </a>
+                </div>
+
+        </div>
+    </div>
+    <!-- </section> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/fannIUJyA/";
+
+        let model, webcam, labelContainer, maxPredictions, answer;
+
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Convenience function to setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // append elements to the DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            answer = document.getElementById("hdfc");
+            $("#progress-renewable").show();
+            $("#progress-nonrenewable").show();
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // run the webcam image through the image model
+        async function predict() {
+            // predict can take in an image, video or canvas html element
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+
+                if (prediction[i].className === "Renewable Energy") {
+
+                    document.getElementById("renewable").style.width = `${prediction[i].probability.toFixed(2) * 100}%`
+
+                } else if (prediction[i].className === "Non-Renewable Energy") {
+                    // if(c2 == 0){
+                    document.getElementById("nonrenewable").style.width = `${prediction[i].probability.toFixed(2) * 100}%`
+                }
+
+                // labelContainer.childNodes[i].innerHTML = classPrediction;
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

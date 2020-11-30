@@ -175,6 +175,10 @@ app.post("/register",function(req, res) {
   });
 });
 
+app.get("/teachingmachine",function(req,res){
+  res.sendFile(__dirname+ "/teachingmachine.html");
+});
+
 app.get("/addpost",function(req,res){
   if(req.user){
     res.redirect('addposts.html');

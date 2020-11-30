@@ -26,11 +26,46 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
   <!-- Template Main CSS File -->
+  <link href="assets/css/recommendation.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- <script type="text/javascript"
+    id="botcopy-embedder-d7lcfheammjct"
+    class="botcopy-embedder-d7lcfheammjct"
+    data-botId="5fbde100c673b60008bc4a64"
+>
+    var s = document.createElement('script');
+    s.type = 'text/javascript'; s.async = true;
+    s.src = 'https://widget.botcopy.com/js/injection.js';
+    document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
+</script> -->
+<script type="text/javascript">
+  (function(d, m){
+      var kommunicateSettings =
+          {"appId":"33f9355df8c82fab84297166aa253249d","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+      window.kommunicate = m; m._globals = kommunicateSettings;
+  })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
 </head>
 
 <body>
+
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -38,24 +73,37 @@
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
           <h1 class="text-light"><a href="index.html"><span>ELECTRO</span></a></h1>
-          
+
         </div>
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li class="active"><a href="#header">Home</a></li>
             <li><a href="/posts">Discussions</a></li>
+            <li  class ="drop-down" ><a href="#">Features</a>
+              <ul>
+                    <li><a href="/teachingmachine"> Find Energy </a></li>
+                    <li data-toggle="modal" data-target="#exampleModal" ><a href="#"> Recommendation system </a></li>
+                    <li><a href="/startgame">Quiz</a></li>
+
+              </ul>
+            </li>
             <li><a href="#portfolio">Energies</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
-
+            
             <li class="get-started" style="width:auto;"><a href="/logout">Logout</a></li>
-           
+
           </ul>
         </nav><!-- .nav-menu -->
       </div><!-- End Header Container -->
     </div>
   </header><!-- End Header -->
+
+  
+  
+
+  
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -63,6 +111,8 @@
       <h1>Renewable Energy and Energy Conservation</h1>
     </div>
   </section><!-- End Hero -->
+
+
 
   <main id="main">
 
@@ -181,7 +231,7 @@
                 <h4>Solar Energy</h4>
                 <div class="portfolio-links">
                   <a href="assets/img/solar.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="solar" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="/solar" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -297,19 +347,19 @@
               </div>
             </div>
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+            <form action="/" method="post" role="form" class="php-email-form mt-4">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input class="input1" type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input class="input1" type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input class="input1" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
@@ -321,7 +371,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button class = "button2" type="submit">Send Message</button></div>
             </form>
           </div>
         </div>
@@ -350,7 +400,7 @@
                   <div class="member-info">
                     <h4>Sripranav Mannepalli</h4>
                     <span>Team6 Member</span>
-                
+
                     <div class="social">
                       <a href=""><i class="ri-twitter-fill"></i></a>
                       <a href=""><i class="ri-facebook-fill"></i></a>
@@ -367,7 +417,7 @@
                   <div class="member-info">
                     <h4>Nitin Nirmal E</h4>
                     <span>Team6 Member</span>
-                    
+
                     <div class="social">
                       <a href=""><i class="ri-twitter-fill"></i></a>
                       <a href=""><i class="ri-facebook-fill"></i></a>
@@ -384,7 +434,7 @@
                   <div class="member-info">
                     <h4>Nagarjuna Kolloju</h4>
                     <span>Team6 member</span>
- 
+
                     <div class="social">
                       <a href=""><i class="ri-twitter-fill"></i></a>
                       <a href=""><i class="ri-facebook-fill"></i></a>
@@ -401,7 +451,7 @@
                   <div class="member-info">
                     <h4>Satya Sai Neelapala</h4>
                     <span>Team6 member</span>
-                  
+
                     <div class="social">
                       <a href=""><i class="ri-twitter-fill"></i></a>
                       <a href=""><i class="ri-facebook-fill"></i></a>
@@ -420,50 +470,128 @@
       </div>
     </section><!-- End Team Section -->
   </main><!-- End #main -->
-  <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/login" method="post">
+
+  <div class="modal fade modal2" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-content2">
+        <div class="modal-header btn-info">
+          <h5 class="modal-title" id="exampleModalLabel">Recommendation Engine</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div id="mainform" >
+                <form id="regForm">
+                  <!-- One "tab" for each step in the form: -->
+                  <div class="tab">
+                  <h1>Electricity</h1><br>
+                  <label for="units" >Units Consumed in the previous month:</label>
+                    <input class="input1" type="number" class="form-control" min="1" max="100000" id="units" name="units" placeholder="Units Of Electricity" required=""><br><br>
+                    <label for="bill" >Electricity Bill in the previous month:</label>
+                    <input class="input1" type="number" class="form-control"  min="1" max="1000000" id="bill" name="bill" placeholder="Electricity Bill in Rupees" required=""><br><br>
+                    <label for="units" >Month :</label>
+                    <input class="input1" type="month" class="form-control"  name="month" id="month" placeholder="Month"    =""><br><br>
+                  </div>
+  
+                  <div class="tab">
+                  <h1>Family Details:</h1>
+                    <label for="numpeople" >Number Of People In your House:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="1" max="20" id="numpeople"  name="numpeople" id="numpeople" placeholder="" required="" autofocus></p>
+                    <label for="numad" >Number Of Adults In your House:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="1" max="20" id="numad" name="numad" id="numad" placeholder="Adults(age>=18)" required="" autofocus></p>
+                    <label for="numcil" >Number Of Children In your House:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="1" max="20"  id="numcil"  name="numcil" id="numcil" placeholder="Children(age<18)" required="" autofocus></p>
+                  </div>
+                  <div class="tab">
+                    <h1>Usage:</h1>
+                    <label for="numfan" >Total number of hours of usage of all Fans per day:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="0" max="1000" id="numfan"  name="numfan" id="numfan" placeholder="Fans" required="" autofocus></p>
+                    <label for="numtub" >Total number of hours of usage of all Lights per day:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="0" max="1000" name="numtub" id="numtub" placeholder="Tubelights" required="" autofocus></p>
+                    <label for="numac" >Total number of hours of usage of all ACs per day:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="0" max="1000" name="numac" id="numac" placeholder="AirConditioners" required="" autofocus></p>
+                    <label for="numh" >Total number of hours of usage of other HeavyDuty Appliances per day:</label><br>
+                    <p><input class="input1" type="number" class="form-control"  min="0" max="1000" name="numh" id="numh" placeholder="HeavyDuty Appliances" required="" autofocus></p>
+                  </div>
+                  <div class="tab">
+                    <h5 id="l1">...............</h1>
+                    <h6 id="l2">...............</h1>
+                    <h6 id="l3">...............</h1>
+                    <h6 id="l4">...............</h1>
+                    <h6 id="l5">...............</h1>
+                    <h6 id="l6">...............</h1>
+                    <div style="float:right;">
+                    <button type="button" class="btn btn-secondary" id="homebutton"  data-dismiss="modal">Home</button>
+                    </div>
+                  </div>
+                  <div style="overflow:auto;">
+                    <div style="float:right;">
+                      <button type="button" id="prevBtn" class="btn btn-info" onclick="nextPrev(-1)">Previous</button>
+                      <button type="button" id="nextBtn" class="btn btn-secondary" onclick="nextPrev(1)">Next</button>
+                    </div>
+                  </div>
+                  <!-- Circles which indicates the steps of the form: -->
+                  <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                  </div>
+                </form>
+            </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="id01" class="modal modal1">
+
+  <form class="modal-content modal-content1 animate" action="/login" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+      <input class="input1" type="text" placeholder="Enter Username" name="username" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+      <input class="input1" type="password" placeholder="Enter Password" name="password" required>
 
-      <button type="submit">Login</button>
+      <button class = "button2" type="submit">Login</button>
 
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none';" class="cancelbtn">Cancel</button>
       <span class="psw">New Here? <a href="#" onclick="document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='block';">Signup</a></span>
     </div>
   </form>
 </div>
-<div id="id02" class="modal">
+<div id="id02" class="modal modal1">
 
-  <form class="modal-content animate" action="/register" method="post">
+  <form class="modal-content modal-content1 animate" action="/register" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
+
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+      <input class="input1" type="text" placeholder="Enter Username" name="username" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+      <input class="input1" type="password" placeholder="Enter Password" name="password" required>
 
-      <button type="submit">Signup</button>
+      <button class = "button2" type="submit">Signup</button>
 
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none';" class="cancelbtn">Cancel</button>
       <span class="psw">Already Here? <a href="#" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block';">Login</a></span>
     </div>
   </form>
@@ -498,9 +626,11 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Get weekly updates and information about renewable energy</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <p>Get weekly updates and information about renewable energy and energy conservation</p>
+            <form action="/" method="post">
+              <input type="email" name="email">
+              <!-- <button style="width: fit-content; height: fit-content;" type="submit" class="btn btn-success " value="Subscribe">Subscribe</button> -->
+              <input type="submit" value="Subscribe">
             </form>
           </div>
 
@@ -529,9 +659,12 @@
   </footer><!-- End Footer -->
 
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- Vendor JS Files -->
+  <!-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
+
+  
+
+
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -542,9 +675,21 @@
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/recommendation.js" ></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+  </script>
 
 </body>
 

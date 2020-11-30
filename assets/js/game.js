@@ -66,12 +66,60 @@ let questions = [
         choice3: "Tracing",
         choice4: "Decay",
         answer: 2,
+    },
+    {
+        question: "Which among the following have a large amount of installed grid interactive renewable power capacity in India",
+        choice1: "Wind power",
+        choice2: "Solar power",
+        choice3: "Hydro power",
+        choice4: "Biomass power",
+        answer: 1,
+    },
+    {
+        question: "Wood is a renewable resource.",
+        choice1: "True",
+        choice2: "False",
+        choice3: "Cannot be determined",
+        choice4: "Not any of these",
+        answer: 1,
+    },
+    {
+        question: "The main composition of biogas is",
+        choice1: "Methane",
+        choice2: "Carbon dioxide",
+        choice3: "Nitrogen",
+        choice4: "Hydrogen",
+        answer: 1,
+    },
+    {
+        question: "Nuclear Energy is a Renewable Energy.",
+        choice1: "True",
+        choice2: "False",
+        choice3: "Cannot be determined",
+        choice4: "Not any of these",
+        answer: 2,
+    },
+    {
+        question: "Energy resources derived from natural organic materials are called ",
+        choice1: "geothermal energy sources",
+        choice2: "fossil fuels",
+        choice3: "biomass",
+        choice4: "All of these",
+        answer: 2,
+    },
+    {
+        question: "Which of the following is a disadvantage of renewable energy ",
+        choice1: "High Pollution",
+        choice2: "Available only in few places",
+        choice3: "High running cost",
+        choice4: "Unreliable supply",
+        answer: 4,
     }
 ]
 
 
 const SCORE_POINTS = 15
-const MAX_QUESTIONS = 7
+const MAX_QUESTIONS = 5
 
 startGame = () => {
     questionCounter = 0
@@ -81,7 +129,7 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
         return window.location.assign('/end.html')
     }
