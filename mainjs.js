@@ -13,11 +13,14 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-	mainfunction();
-	document.getElementById("prevBtn").style.display = "none";
-	document.getElementById("nextBtn").style.display = "none";
-	document.getElementById("nextBtn").innerHTML = "Home";
-	document.getElementById("lastpage").innerHTML="CHANGED";
+  var l1="";
+  var l2="";
+  var l3="";
+  var l4="";
+  var l5="";
+  var l6="";
+  mainfunction(l1,l2,l3,l4,l5,l6);
+  
 	////////////////////////////////////////////////////////
   }
   else {
@@ -79,7 +82,7 @@ function fixStepIndicator(n) {
 }
 
 
-function mainfunction(){
+function mainfunction(l1,l2,l3,l4,l5,l6){
 	var units=document.getElementById("units").value;
 	var bill=document.getElementById("bill").value;
 	var month=document.getElementById("month").value;
@@ -89,6 +92,47 @@ function mainfunction(){
 	var numfan=document.getElementById("numfan").value;
 	var numtub=document.getElementById("numtub").value;
 	var numac=document.getElementById("numac").value;
-	var numh=document.getElementById("numh").value;
+  var numh=document.getElementById("numh").value;
+  var _units_=40;
+  if(parseInt(month.substr(5,7))>=3 && parseInt(month.substr(5,7))<=6){
+    _units_=50;
+  }
+  var unit=units/numpeople;
+  l2="Hey!We Found A way for you to save electricity even better."
+  if(unit<=_units_){
+    l1="Wow!You are already Doing Better Without Us.";
+  }
+  else if(unit>_units_+200){
+    l1="Hey!You are using a lot of electricity..Is the information provided correct?"
+  }
+  else{
+    l1="You Could Save Electricity.";
+    l2="You Could save your money as well as save electricity..";
+  }
+  if(numfan/numpeople > 6){
+    l3="Turn off unnecessary Fans.";
+  }
+  if(numtub/numpeople > 3){
+    l4="Turn off unnecessary Lights.";
+    l4+="Use natural light during daytime."
+  }
+  if(numac/numpeople > 1){
+    l5="Try to use AC optimally...";
+  }
+  if(numh/numpeople > 1){
+    l6="Using of Heavy Duty Appliances should be reguled...";
+  }
+  if(l3=="" && l4=="" && l5=="" && l6==""){
+    l2="Wow.Seems like You are you are the Best.We Dont have any suggestion for you.Keep this up.";
+  }
+  document.getElementById("prevBtn").style.display = "none";
+	document.getElementById("nextBtn").style.display = "none";
+	document.getElementById("nextBtn").innerHTML = "Home";
+  document.getElementById("l1").innerHTML=l1;
+  document.getElementById("l2").innerHTML=l2;
+  document.getElementById("l3").innerHTML=l3;
+  document.getElementById("l4").innerHTML=l4;
+  document.getElementById("l5").innerHTML=l5;
+  document.getElementById("l6").innerHTML=l6;
 }
 
